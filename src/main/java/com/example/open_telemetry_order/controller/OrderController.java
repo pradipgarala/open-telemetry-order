@@ -12,8 +12,15 @@ import java.time.LocalDateTime;
 @RequestMapping("orders")
 public class OrderController {
 
+    private OrderRepository orderRepository;
+
+    public OrderController(OrderRepository orderRepository) {
+        this.orderRepository = orderRepository;
+    }
+
     @GetMapping("{id}")
-    public Order getOrders(@PathVariable int id) {
-        return new Order(id, id, LocalDateTime.now(), 10);
+    public Order getOrders(@PathVariable long id) {
+        return orderRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("No such order: " + id));
     }
 }

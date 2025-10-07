@@ -1,0 +1,2 @@
+INSERT INTO orders.orders(id, customer_id, order_date, total_amount) values(1, 1, '2025-10-05T10:10:12.123+05:30', 10);
+INSERT INTO orders.orders(id, customer_id, order_date, total_amount) values(2, 2, '2025-10-05T10:10:22.123+05:30', 20);
