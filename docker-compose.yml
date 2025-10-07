@@ -1,7 +1,7 @@
 version: '3'
 services:
   order-service:
-    build: ./
+    image: open-telemetry-order:0.0.6-SNAPSHOT
     environment:
       OTEL_TRACES_EXPORTER: "jaeger"
       OTEL_EXPORTER_JAEGER_ENDPOINT: "http://jaeger:14250"
